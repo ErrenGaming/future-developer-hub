@@ -16,9 +16,8 @@ export function Hero() {
         className="grid-backdrop pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(70%_60%_at_60%_0%,black,transparent)]"
       />
       <div className="relative mx-auto grid max-w-6xl gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center">
-        <div className="animate-fade-up">
-          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-[11px] font-bold tracking-[0.12em] text-primary">
-            <Sparkles className="size-3.5" aria-hidden="true" />
+        <div className="order-2 animate-fade-up lg:order-1">
+
             AVAILABLE FOR INTERNSHIP &amp; JUNIOR OPPORTUNITIES
           </p>
 
