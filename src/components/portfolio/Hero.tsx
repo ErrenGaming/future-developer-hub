@@ -72,7 +72,7 @@ export function Hero() {
           </ul>
         </div>
 
-        <HeroVisual />
+        <ProfilePhoto />
       </div>
     </section>
   );
