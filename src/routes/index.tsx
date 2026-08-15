@@ -1,24 +1,69 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/portfolio/Navbar";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Skills } from "@/components/portfolio/Skills";
+import { Services } from "@/components/portfolio/Services";
+import { Projects } from "@/components/portfolio/Projects";
+import { CareerStatus } from "@/components/portfolio/CareerStatus";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Aung Zaw Myo | Web Designer, UI/UX Designer & Frontend Developer";
+const description =
+  "Aung Zaw Myo is a fourth-year Computer University student and aspiring Web Designer, UI/UX Designer, and Frontend Developer currently looking for internship and junior-level opportunities.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      {
+        name: "keywords",
+        content:
+          "Web Designer, UI/UX Designer, Frontend Developer, Computer University Mandalay, Frontend Developer Myanmar, Web Designer Myanmar, UI/UX Designer Myanmar, Internship, Junior Developer",
+      },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Aung Zaw Myo",
+          jobTitle: "Web Designer, UI/UX Designer, Frontend Developer",
+          email: "mailto:errendear@gmail.com",
+          telephone: "09-771724696",
+          alumniOf: { "@type": "CollegeOrUniversity", name: "Computer University, Mandalay" },
+          knowsAbout: ["HTML", "CSS", "Tailwind CSS", "Figma", "GitHub", "UI/UX Design"],
+          seeks: "Internship and junior-level opportunities",
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Services />
+        <Projects />
+        <CareerStatus />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
