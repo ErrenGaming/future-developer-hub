@@ -1,4 +1,6 @@
 import { ArrowRight, Code2, Layers, MonitorSmartphone, Sparkles } from "lucide-react";
+import profilePhoto from "@/assets/aung-zaw-myo.jpg.asset.json";
+
 
 const valuePoints = [
   { icon: MonitorSmartphone, label: "Clean & Responsive Design" },
