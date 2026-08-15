@@ -17,8 +17,10 @@ export function Hero() {
       />
       <div className="relative mx-auto grid max-w-6xl gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center">
         <div className="order-2 animate-fade-up lg:order-1">
-
+          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-[11px] font-bold tracking-[0.12em] text-primary">
+            <Sparkles className="size-3.5" aria-hidden="true" />
             AVAILABLE FOR INTERNSHIP &amp; JUNIOR OPPORTUNITIES
+
           </p>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-navy sm:text-5xl lg:text-6xl">
